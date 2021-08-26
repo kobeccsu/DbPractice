@@ -9,20 +9,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@SecurityRequirement(name = "javainuseapi")
 public class UsersController {
 
     @Autowired
     UsersMapper usersMapper;
 
-    @RequestMapping(value="/users",method = RequestMethod.GET)
+    @GetMapping(value="/users")
     public List<Users> getAllUser(){
-        List<Users> users = usersMapper.selectAll();
-        return users;
+        return usersMapper.selectAll();
     }
 
-    @RequestMapping(value="/users/{id}", method = RequestMethod.GET)
+    @GetMapping(value="/users/{id}")
     public Users getUserById(@PathVariable("id") int id){
-        Users users = usersMapper.selectOne(id);
-        return users;
+        return usersMapper.selectOne(id);
     }
 }

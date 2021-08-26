@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import static io.swagger.v3.core.util.AnnotationsUtils.getContact;
 import static io.swagger.v3.core.util.AnnotationsUtils.getLicense;
 
-@Configuration
+//@Configuration
 public class SwaggerConfig {
     private static final String SECURITY_SCHEME_NAME = "Bearer oAuth Token";
 
